@@ -1,0 +1,6 @@
+-- SQLite
+--Exibindo cliente que alugaram duas ou mais vezes
+SELECT C.NAME FROM CUSTOMERS AS C 
+JOIN LOCATIONS AS L ON (C.ID = L.CUSTOMER_ID)
+GROUP BY CUSTOMER_ID
+HAVING COUNT(CUSTOMER_ID) >= 2;
